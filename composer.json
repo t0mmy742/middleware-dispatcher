@@ -1,0 +1,53 @@
+{
+    "name": "t0mmy742/middleware-dispatcher",
+    "type": "library",
+    "description": "A simple PSR-15 middleware dispatcher",
+    "keywords": [
+        "middleware",
+        "dispatcher",
+        "PSR-15"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas LE BERRE",
+            "email": "t0mmy742@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "psr/http-message": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0"
+    },
+    "require-dev": {
+        "phpspec/prophecy": "^1.10",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpstan/phpstan": "^0.12.19",
+        "phpunit/phpunit": "^9.1",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "t0mmy742\\MiddlewareDispatcher\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "t0mmy742\\Tests\\MiddlewareDispatcher\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@phpunit",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "phpunit": "phpunit",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyse src --memory-limit=-1"
+    }
+}
